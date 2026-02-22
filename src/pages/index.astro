@@ -1,36 +1,8 @@
 ---
-import '@fontsource/fraunces';
-import '@fontsource/geist';
-import '@fontsource-variable/fraunces/full.css';
-
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Jake Culp - Senior Product Designer</title>
-	</head>
-	<style>
-		h1 {
-  		font-family: "Fraunces Variable", sans-serif;
-		font-weight: 300;
-		font-variation-settings: "WONK" 0;
-		font-optical-sizing: 64px;
-		font-variation-settings: "SOFT" 100;
-		font-size: 4rem;
-	}
-
-	p {
-		font-family: "Geist", cursive;
-	}
-	</style>
-	<body>
-		<h1>Jake Culp is a </h1>
-		<p>Hello World</p>
-		<a href="/src/pages/about.astro">About</a>
-	</body>
-</html>
+<BaseLayout title="Jake Culp - Senior Product Designer">
+  <Hero />
+</BaseLayout>

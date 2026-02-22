@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+@theme {
+  /* prettier-ignore */
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+h1 {
+  font-family: "Fraunces Variable", sans-serif;
+  font-weight: 300;
+  font-variation-settings: "WONK" 0, "SOFT" 100;
+  font-optical-sizing: auto;
+  font-size: 4rem;
+}
+
+p {
+  font-family: "Geist", sans-serif;
+  font-size: clamp(20px, 9.895px + 3.158vw, 32px);
+}

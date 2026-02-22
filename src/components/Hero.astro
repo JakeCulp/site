@@ -1,0 +1,38 @@
+---
+/**
+ * Hero section: large headline + subheadline.
+ */
+---
+
+<section class="hero">
+  <h1 class="hero__headline text-taupe-950 pb-4">
+    Jake Culp <span class="text-taupe-600">is a</span> <br />
+    product designer <span class="text-taupe-600">based</span><br />
+    <span text-taupe-600>in</span> <span class="text-green-700">Philadelphia</span>, Pennsylvania.
+  </h1>
+  <p class="hero__subheadline text-taupe-600">
+    He enjoys working on new, innovative ideas, crafting design systems, brazilian jiu jitsu, and drinking smoothies.
+  </p>
+</section>
+
+<style>
+  .hero {
+    padding-block: clamp(2rem, 5vw, 4rem) 0;
+  }
+
+  .hero__headline {
+    font-family: "Fraunces Variable", sans-serif;
+    font-weight: 300;
+    font-variation-settings: "WONK" 0, "SOFT" 100;
+    font-optical-sizing: auto;
+    font-size: clamp(32px, 5.053px + 8.421vw, 64px);
+    line-height: 1.10;
+    letter-spacing: -0.02em;
+  }
+
+  .hero__subheadline {
+    font-family: "Geist", sans-serif;
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    line-height: 1.3;
+  }
+</style>

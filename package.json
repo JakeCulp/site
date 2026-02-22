@@ -12,8 +12,8 @@
     "@fontsource-variable/fraunces": "^5.2.9",
     "@fontsource/fraunces": "^5.2.9",
     "@fontsource/geist": "^5.2.8",
-    "@tailwindcss/vite": "^4.1.18",
+    "@tailwindcss/vite": "4.2",
     "astro": "^5.17.1",
-    "tailwindcss": "^4.1.18"
+    "tailwindcss": "4.2"
   }
 }
