@@ -13,17 +13,17 @@ import Logo from '../logo.svg';
 ---
 
 <header class="pt-12">
-  <nav class="mx-auto flex items-center justify-between gap-6 px-6 pr-7 py-3" aria-label="Main navigation">
+  <nav class="mx-auto flex items-center justify-between gap-6 px-6 py-3" aria-label="Main navigation">
     <a href="/">
       <Logo />
     </a>
-    <ul class="flex list-none gap-2 p-0 m-0 text-xl ">
+    <ul class="flex list-none gap-2 p-0 m-0 text-xl">
       {
         links.map(({ href, label }) => (
           <li>
             <a
               href={href}
-              class="text-taupe-600 no-underline hover:text-taupe-900 hover:bg-taupe-300 p-3 rounded-md"
+              class="text-taupe-600 no-underline hover:text-taupe-900 hover:bg-taupe-100 p-3 rounded-md"
             >
               {label}
             </a>
