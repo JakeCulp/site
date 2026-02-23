@@ -1,0 +1,31 @@
+---
+/**
+ * Case Study Component
+ */
+---
+
+<article class="case-study rounded-xl shadow bg-white overflow-hidden flex flex-col md:flex-row gap-0 md:gap-6 max-w-3xl mx-auto mb-12">
+  <div class="case-study__image flex-shrink-0 w-full md:w-2/5">
+    <img 
+      src="/images/case-study-placeholder.jpg" 
+      alt="Screenshot or mockup of the case study project" 
+      class="object-cover w-full h-64 md:h-full"
+      loading="lazy"
+    >
+  </div>
+  <div class="case-study__content p-6 flex flex-col justify-center w-full">
+    <h2 class="text-2xl font-serif font-semibold text-taupe-950 mb-2">
+      Product Redesign: Acme App
+    </h2>
+    <p class="text-taupe-700 text-base mb-0">
+      Led the redesign of Acme’s flagship SaaS product for a smoother onboarding, enhanced usability, and a more cohesive multi-platform experience. Collaborated with engineering and marketing to ship improvements that increased user retention by 24%.
+    </p>
+  </div>
+</article>
+
+<style>
+  .case-study__image img {
+    border-radius: 0;
+    /* You can also add aspect-ratio or object-fit if wanted */
+  }
+</style>

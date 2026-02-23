@@ -13,8 +13,8 @@
   <p class="hero__subheadline text-taupe-600">
     <!-- Welcome to my spot on the internet. -->
   </p>
-  <p class="hero__subheadline text-taupe-600 ">
-    Here is where I share my work and some of my personal hobbies like <a href="">jiu jitsu</a>, <a href="">reading</a>, and <a href="">film</a>.
+  <p class="hero__subheadline text-taupe-950 text-pretty">
+    This is where I share my work and some of my personal hobbies like <a class="underline decoration-green-700/40 hover:decoration-green-700" href="">jiu jitsu</a>, <a class="underline decoration-green-700/40 hover:decoration-green-700" href="">reading</a>, and <a class="underline decoration-green-700/40 hover:decoration-green-700" href="">film</a>.
     </p>
 </section>
 
@@ -38,5 +38,11 @@
     font-size: clamp(1.25rem, 2vw, 1.75rem);
     line-height: 1.3;
     letter-spacing: -0.5px;
+  }
+  
+  .hero__subheadline a {
+    color: var(--color-green-700);
+    text-decoration-thickness: .15ex;
+    text-underline-offset: .15ex;
   }
 </style>
