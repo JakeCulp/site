@@ -25,183 +25,55 @@ interface Props {
 const { company, projects } = Astro.props;
 ---
 
-<section class="case-study-section" aria-labelledby="case-study-company">
-  <!-- Company header: logo + title, description, years -->
-  <div class="case-study-section__company" id="case-study-company">
-    <div class="case-study-section__logo-wrap outline-4 -outline-offset-4 outline-taupe-200/20">
+<section class="max-w-3xl mx-auto flex flex-col items-stretch gap-5" aria-labelledby="case-study-company">
+  <!-- Company header: logo + title, job description, years -->
+  <div class="flex items-center gap-5" id="case-study-company">
+    <div class="shrink-0 overflow-hidden h-[120px] w-[120px] rounded-full outline-2 -outline-offset-2 outline-black/10">
       <img
-        class="case-study-section__logo"
+        class="h-full w-full aspect-square"
         src={company.logo}
         alt=""
-        width="126"
-        height="126"
         loading="lazy"
       />
     </div>
-    <div class="case-study-section__company-text">
-      <h2 class="case-study-section__company-title">{company.title}</h2>
-      <p class="case-study-section__company-description">{company.description}</p>
-      <p class="case-study-section__company-years">{company.years}</p>
+    <div class="">
+      <h2 class="font-semibold text-taupe-950 text-2xl/8 pb-1">
+        {company.title}
+      </h2>
+      <p class="font-normal text-taupe-500 text-base/5 pb-1">
+        {company.description}
+      </p>
+      <p class="font-normal text-taupe-500 text-base/5 pb-1">{company.years}</p>
     </div>
   </div>
-
   <!-- Cascading list of case study projects -->
-  <div class="case-study-section__cascade">
-    <div class="case-study-section__line" aria-hidden="true"></div>
-    <ul class="case-study-section__list">
-      {projects.map((project, i) => (
-        <li class="case-study-section__item">
-          <div class="case-study-section__card">
-            <div class="case-study-section__card-image-wrap outline-4 -outline-offset-4 outline-taupe-200/20">
-              <img
-                class="case-study-section__card-image"
-                src={project.image}
-                alt=""
-                width="844"
-                height="432"
-                loading="lazy"
-              />
+  <div class="flex gap-5 w-full">
+    <ul class="flex-1 list-none m-0 p-0 flex flex-col gap-12">
+      {
+        projects.map((project, i) => (
+          <li class="m-auto">
+            <div class="flex flex-col gap-5 bg-white p-4 rounded-[26px] shadow-woah hover:shadow-woah-more hover:scale-101 duration-200 ease-out transition-[scale,shadow] cursor-pointer">
+              <div class="w-full overflow-hidden outline-2 -outline-offset-2 outline-black/10 rounded-[10px]">
+                <img
+                  class="w-full h-full object-cover aspect-3/2"
+                  src={project.image}
+                  alt=""
+                  loading="lazy"
+                />
+              </div>
+              <div class="flex flex-col">
+                <h3 class="text-pretty text-2xl text-taupe-950 leading-relaxed">
+                  {project.title}
+                </h3>
+                <p class="text-pretty text-base text-taupe-600 leading-relaxed">
+                  {project.description}
+                </p>
+                {/* create cool tags for case studies here */}
+              </div>
             </div>
-            <div class="case-study-section__card-text">
-              <h3 class="case-study-section__card-title text-pretty">{project.title}</h3>
-              <p class="case-study-section__card-description">{project.description}</p>
-            </div>
-          </div>
-        </li>
-      ))}
+          </li>
+        ))
+      }
     </ul>
   </div>
 </section>
-
-<style>
-  .case-study-section {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 1.25rem;
-    width: 100%;
-  }
-
-  .case-study-section__company {
-    display: flex;
-    gap: 1.25rem;
-    align-items: center;
-  }
-
-  .case-study-section__logo-wrap {
-    flex-shrink: 0;
-    width: 126px;
-    height: 126px;
-    border-radius: 20px;
-    overflow: hidden;
-    background: var(--color-taupe-100, #e8e4e3);
-  }
-
-  .case-study-section__logo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 18px;
-  }
-
-  .case-study-section__company-text {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    line-height: 1.3;
-  }
-
-  .case-study-section__company-title {
-    font-weight: 600;
-    font-size: clamp(1.25rem, 2vw, 1.75rem);
-    color: var(--color-taupe-950, #0c0a09);
-    margin: 0;
-  }
-
-  .case-study-section__company-description,
-  .case-study-section__company-years {
-    font-weight: 500;
-    font-size: clamp(1.25rem, 2vw, 1.75rem);
-    margin: 0;
-  }
-
-  .case-study-section__company-description {
-    color: var(--color-taupe-600, #5b4f4b);
-  }
-
-  .case-study-section__company-years {
-    color: var(--color-taupe-500, #7c6d67);
-  }
-
-  /* Cascading list: vertical line + project cards */
-  .case-study-section__cascade {
-    display: flex;
-    gap: 1.25rem;
-    align-items: stretch;
-    width: 100%;
-  }
-
-  .case-study-section__line {
-    flex-shrink: 0;
-    width: 1px;
-    min-height: 100%;
-    background: var(--color-taupe-300, #c4b8b3);
-  }
-
-  .case-study-section__list {
-    flex: 1;
-    list-style: none;
-    margin: 0;
-    padding: 3.125rem 0 0;
-    display: flex;
-    flex-direction: column;
-    gap: 3.125rem;
-  }
-
-  .case-study-section__item {
-    margin: 0;
-  }
-
-  .case-study-section__card {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-  }
-
-  .case-study-section__card-image-wrap {
-    width: 100%;
-    height: 432px;
-    border: 2px solid rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
-    overflow: hidden;
-    background: var(--color-taupe-100, #e8e4e3);
-  }
-
-  .case-study-section__card-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 18px;
-  }
-
-  .case-study-section__card-text {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    line-height: 1.3;
-  }
-
-  .case-study-section__card-title {
-    font-weight: 600;
-    color: var(--color-taupe-950, #0c0a09);
-    margin: 0;
-    font-size: clamp(1.25rem, 2vw, 1.75rem);
-  }
-
-  .case-study-section__card-description {
-    font-weight: 500;
-    font-size: clamp(1.25rem, 2vw, 1.75rem);
-    color: var(--color-taupe-600, #5b4f4b);
-    margin: 0;
-  }
-</style>

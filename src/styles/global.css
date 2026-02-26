@@ -1,18 +1,29 @@
 @import "tailwindcss";
 
 @theme {
-  /* prettier-ignore */
-  --font-sans: "Public Sans Variable", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans:
+    "Public Sans Variable", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --shadow-woah:
+    0px 0px 0px 1px rgba(0, 0, 0, 0.08), 0px 1px 2px -1px rgba(0, 0, 0, 0.08),
+    0px 2px 4px 0px rgba(0, 0, 0, 0.06);
+
+  --shadow-woah-more:
+    0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px -1px rgba(0, 0, 0, 0.1),
+    0px 2px 4px 0px rgba(0, 0, 0, 0.08);
 }
 
 h1 {
   font-family: "Fraunces Variable", sans-serif;
   font-weight: 300;
-  font-variation-settings: "WONK" 0, "SOFT" 100;
+  font-variation-settings:
+    "WONK" 0,
+    "SOFT" 100;
   font-optical-sizing: auto;
   font-size: 4rem;
 }
 
-p {
+/* p {
   font-size: clamp(20px, 9.895px + 3.158vw, 32px);
-}
+} */
