@@ -37,7 +37,7 @@ const { company, projects } = Astro.props;
       />
     </div>
     <div class="">
-      <h2 class="font-semibold text-taupe-950 text-2xl/8 pb-1">
+      <h2 class="font-medium text-taupe-950 text-2xl/8 pb-1">
         {company.title}
       </h2>
       <p class="font-normal text-taupe-500 text-base/5 pb-1">
@@ -52,17 +52,17 @@ const { company, projects } = Astro.props;
       {
         projects.map((project, i) => (
           <li class="m-auto">
-            <div class="flex flex-col gap-5 bg-white p-4 rounded-[26px] shadow-woah hover:shadow-woah-more hover:scale-101 duration-200 ease-out transition-[scale,shadow] cursor-pointer">
-              <div class="w-full overflow-hidden outline-2 -outline-offset-2 outline-black/10 rounded-[10px]">
+            <div class="flex flex-col gap-0 overflow-hidden bg-white rounded-xl shadow-woah hover:shadow-woah-more hover:scale-101 duration-200 ease-out transition-[scale,shadow] cursor-pointer will-change-transform">
+              <div class="w-full">
                 <img
-                  class="w-full h-full object-cover aspect-3/2"
+                  class="w-full h-full object-cover aspect-video"
                   src={project.image}
                   alt=""
                   loading="lazy"
                 />
               </div>
-              <div class="flex flex-col">
-                <h3 class="text-pretty text-2xl text-taupe-950 leading-relaxed">
+              <div class="flex flex-col p-4">
+                <h3 class="text-pretty text-xl text-taupe-950 leading-relaxed">
                   {project.title}
                 </h3>
                 <p class="text-pretty text-base text-taupe-600 leading-relaxed">
