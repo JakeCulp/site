@@ -14,7 +14,7 @@ export interface Company {
 export interface CaseStudyProject {
   image: string;
   title: string;
-  description: string;
+  categories?: string[];
 }
 
 interface Props {
@@ -37,7 +37,7 @@ const { company, projects } = Astro.props;
       />
     </div>
     <div class="">
-      <h2 class="font-medium text-taupe-950 text-2xl/8 pb-1">
+      <h2 class="font-semibold text-taupe-950 text-2xl/8 pb-1">
         {company.title}
       </h2>
       <p class="font-normal text-taupe-500 text-base/5 pb-1">
@@ -62,13 +62,55 @@ const { company, projects } = Astro.props;
                 />
               </div>
               <div class="flex flex-col p-4">
-                <h3 class="text-pretty text-xl text-taupe-950 leading-relaxed">
+                <h3 class="text-pretty text-2xl text-taupe-950 leading-relaxed font-semibold" >
                   {project.title}
                 </h3>
-                <p class="text-pretty text-base text-taupe-600 leading-relaxed">
-                  {project.description}
-                </p>
-                {/* create cool tags for case studies here */}
+                {project.categories?.length ? (
+                  (() => {
+                    // Use a deterministic approach to assign a unique color to each category per project.
+                    const tagColors = [
+                      'bg-sky-100 text-sky-900',
+                      'bg-amber-100 text-amber-900',
+                      'bg-emerald-100 text-emerald-900',
+                      'bg-purple-100 text-purple-900',
+                      'bg-pink-100 text-pink-900',
+                      'bg-orange-100 text-orange-900',
+                      'bg-teal-100 text-teal-900',
+                      'bg-indigo-100 text-indigo-900',
+                      'bg-lime-100 text-lime-900',
+                      'bg-cyan-100 text-cyan-900',
+                      'bg-fuchsia-100 text-fuchsia-900',
+                    ];
+                    // Shuffle colors so each project gets a random palette, but colors remain unique per project
+                    function shuffle(array: string[]) {
+                      let arr = array.slice();
+                      for (let i = arr.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [arr[i], arr[j]] = [arr[j], arr[i]];
+                      }
+                      return arr;
+                    }
+                    const colorPalette = shuffle(tagColors);
+
+                    return (
+                      <ul class="flex flex-wrap gap-2 mt-2 list-none m-0 p-0" aria-label="Categories">
+                        {project.categories.map((category, idx) => {
+                          // Use index to ensure one color per category in this project
+                          const colorClass = colorPalette[idx % colorPalette.length];
+                          return (
+                            <li>
+                              <span
+                                class={`inline-block px-2.5 py-1 rounded-lg font-normal ${colorClass}`}
+                              >
+                                {category}
+                              </span>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    );
+                  })()
+                ) : null}
               </div>
             </div>
           </li>
