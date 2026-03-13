@@ -1,5 +1,5 @@
 ---
-layout: '../layouts/CaseStudy.astro'
+layout: '../layouts/SubLayout.astro'
 ---
 # About this Project
 
