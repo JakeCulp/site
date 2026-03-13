@@ -1,0 +1,294 @@
+---
+import SubLayout from "../layouts/SubLayout.astro";
+
+const bookshopSearchUrl = (title: string, author: string) =>
+  `https://bookshop.org/search?query=${encodeURIComponent(`${title} ${author}`)}`;
+
+const currentlyReading = [
+  {
+    title: "Every Tool's a Hammer",
+    url: "https://bookshop.org/p/books/every-tool-s-a-hammer-life-is-what-you-make-it-adam-savage/6704724",
+    author: "Adam Savage",
+  },
+];
+
+const wantToRead = [
+  {
+    title: "Typhoid Mary: An Urban Historical",
+    url: "https://bookshop.org/p/books/typhoid-mary-an-urban-historical-anthony-bourdain/e307e42714a10cad",
+    author: "Anthony Bourdain",
+  },
+  {
+    title: "Football",
+    url: "https://bookshop.org/p/books/football-chuck-klosterman/6f7b5ee7868210ba",
+    author: "Chuck Klosterman",
+  },
+  {
+    title: "When We Cease to Understand the World",
+    url: "https://bookshop.org/p/books/when-we-cease-to-understand-the-world/18834780",
+    author: "Benjamin Labatut",
+  },
+  {
+    title: "Everything is Tuberculosis: The History and Persistence of Our Deadliest Infection",
+    url: "https://bookshop.org/p/books/everything-is-tuberculosis-signed-edition-the-history-and-persistence-of-our-deadliest-infection-john-green/57e35f61394b6daf",
+    author: "John Green",
+  },
+  {
+    title: "The Zorg: A Tale of Greed and Murder That Inspired the Abolition of Slavery",
+    url: "https://bookshop.org/p/books/the-zorg-a-tale-of-greed-and-murder-that-inspired-the-abolition-of-slavery-siddharth-kara/c2294b3fcf0af96b",
+    author: "Siddharth Kara",
+  },
+  {
+    title: "Blood Meridian",
+    url: "https://bookshop.org/p/books/blood-meridian-or-the-evening-redness-in-the-west-cormac-mccarthy/6697128",
+    author: "Cormac McCarthy",
+  },
+  {
+    title: "The Bluest Eye",
+    url: "https://bookshop.org/p/books/the-bluest-eye-toni-morrison/8492901",
+    author: "Toni Morrison",
+  },
+  {
+    title: "Beloved",
+    url: "https://bookshop.org/p/books/beloved-toni-morrison/285459",
+    author: "Toni Morrison",
+  },
+  {
+    title: "I Who Have Never Known Men",
+    url: "https://bookshop.org/p/books/i-who-have-never-known-men-jacqueline-harpman/17516165",
+    author: "Jacqueline Harpman",
+  },
+  {
+    title: "The Stranger",
+    url: "https://bookshop.org/p/books/the-stranger-albert-camus/15564796",
+    author: "Albert Camus",
+  },
+  {
+    title: "The Beauty of Games",
+    url: "https://bookshop.org/p/books/the-beauty-of-games-frank-lantz/067d8fae647b4db0",
+    author: "Frank Lantz",
+  },
+  {
+    title: "The Rape of Nanking",
+    url: "https://bookshop.org/p/books/the-rape-of-nanking-the-forgotten-holocaust-of-world-war-ii-iris-chang/f768c73c3d2a3a71",
+    author: "Iris Chang",
+  },
+  {
+    title: "Jurassic Park",
+    url: "https://bookshop.org/p/books/jurassic-park-michael-crichton/14708249",
+    author: "Michael Crichton",
+  },
+  {
+    title: "All Quiet on the Western Front",
+    url: "https://bookshop.org/p/books/all-quiet-on-the-western-front-erich-maria-remarque/6d6d2815f4b1c27c",
+    author: "Erich Maria Remarque",
+  },
+  {
+    title: "Do Androids Dream of Electric Sheep?",
+    url: "https://bookshop.org/p/books/do-androids-dream-of-electric-sheep-philip-k-dick/9044382",
+    author: "Philip K. Dick",
+  },
+  {
+    title: "Against Our Will: Men, Women and Rape",
+    url: "https://bookshop.org/p/books/against-our-will-men-women-and-rape-susan-brownmiller/c860c838e78d73b7",
+    author: "Susan Brownmiller",
+  },
+  {
+    title: "The Big Sleep",
+    url: "https://bookshop.org/p/books/the-big-sleep-raymond-chandler/6775557",
+    author: "Raymond Chandler",
+  },
+  {
+    title: "Lord of the Flies",
+    url: "https://bookshop.org/p/books/lord-of-the-flies-william-golding/498993",
+    author: "William Golding",
+  },
+  {
+    title: "The Children of Men",
+    url: "https://bookshop.org/p/books/the-children-of-men-p-d-james/8716288",
+    author: "P.D. James",
+  },
+  {
+    title: "The Hitchhiker's Guide to the Galaxy",
+    url: "https://bookshop.org/p/books/the-hitchhiker-s-guide-to-the-galaxy-douglas-adams/15546730",
+    author: "Douglas Adams",
+  },
+  {
+    title: "Invisible Cities",
+    url: "https://bookshop.org/p/books/invisible-cities-italo-calvino/17400191",
+    author: "Italo Calvino",
+  },
+  {
+    title: "The Heaven & Earth Grocery Store",
+    url: "https://bookshop.org/p/books/the-heaven-earth-grocery-store-james-mcbride/19674560",
+    author: "James McBride",
+  },
+  {
+    title: "Angela's Ashes",
+    url: "https://bookshop.org/p/books/angelas-ashes-frank-mccourt/17459868",
+    author: "Frank McCourt",
+  },
+  {
+    title: "Vampires, Burial, and Death: Folklore and Reality",
+    url: "https://bookshop.org/p/books/vampires-burial-and-death-folklore-and-reality-paul-barber/0893b3b57f400036",
+    author: "Paul Barber",
+  },
+  {
+    title: "Dracula",
+    url: "https://bookshop.org/p/books/dracula-bram-stoker/8e0a1bcd4ee5471c",
+    author: "Bram Stoker",
+  },
+  {
+    title: "Demanding the Impossible: A History of Anarchism",
+    url: "https://bookshop.org/p/books/demanding-the-impossible-a-history-of-anarchism-emeritus-professor-of-imperial-history-peter-marshall-md-mph/ff2b7539b76cc848",
+    author: "Peter Marshall",
+  },
+  {
+    title: "The Death and Life of Great American Cities",
+    url: "https://bookshop.org/p/books/the-death-and-life-of-great-american-cities-jane-jacobs/c541f355870e017f",
+    author: "Jane Jacobs",
+  },
+  {
+    title: "Four Hundred Souls",
+    url: "https://bookshop.org/p/books/four-hundred-souls-a-community-history-of-african-america-1619-2019-ibram-x-kendi/4d8400c5c7d8058b",
+    author: "Ibram X. Kendi & Keisha N. Blain",
+  },
+  {
+    title: "The Handmaid's Tale",
+    url: "https://bookshop.org/p/books/the-handmaid-s-tale-a-novel-margaret-atwood/63245a7f10b38c79",
+    author: "Margaret Atwood",
+  },
+  {
+    title: "Catch-22",
+    url: "https://bookshop.org/p/books/catch-22-50th-anniversary-edition-joseph-heller/e5abbd33e1ad768b",
+    author: "Joseph Heller",
+  },
+  {
+    title: "One Flew Over the Cuckoo's Nest",
+    url: "https://bookshop.org/p/books/one-flew-over-the-cuckoo-s-nest-ken-kesey/b6bb43a481758e53",
+    author: "Ken Kesey",
+  },
+  {
+    title: "Man's Search for Meaning",
+    url: "https://bookshop.org/p/books/man-s-search-for-meaning-viktor-e-frankl/f040ee34581bdc92",
+    author: "Viktor Frankl",
+  },
+  {
+    title: "Frankenstein",
+    url: "https://bookshop.org/p/books/frankenstein-mary-shelley/6a5ab762f4a4486e",
+    author: "Mary Shelley",
+  },
+  {
+    title: "To Kill a Mockingbird",
+    url: "https://bookshop.org/p/books/to-kill-a-mockingbird-harper-lee/e4db1b064c8dd758",
+    author: "Harper Lee",
+  },
+];
+
+const haveRead = [
+  {
+    title: "Long Haul: Hunting the Highway Serial Killers",
+    url: "https://bookshop.org/p/books/long-haul-hunting-the-highway-serial-killers-frank-figliuzzi/ad452d52cdfd1511",
+    author: "Frank Figliuzzi",
+  },
+  {
+    title: "Slaughterhouse-Five",
+    url: "https://bookshop.org/p/books/slaughterhouse-five-kurt-vonnegut/7b7d29ee40b5ce15",
+    author: "Kurt Vonnegut",
+  },
+  {
+    title: "Thick: And Other Essays",
+    url: "https://bookshop.org/p/books/thick-and-other-essays-tressie-mcmillan-cottom/e5d11fbf310d1738",
+    author: "Tressie McMillan Cottom",
+  },
+  {
+    title: "Never Let Me Go",
+    url: bookshopSearchUrl("Never Let Me Go", "Kazuo Ishiguro"),
+    author: "Kazuo Ishiguro",
+  },
+  {
+    title: "Kitchen Confidential: Adventures in the Culinary Underbelly",
+    url: bookshopSearchUrl(
+      "Kitchen Confidential: Adventures in the Culinary Underbelly",
+      "Anthony Bourdain"
+    ),
+    author: "Anthony Bourdain",
+  },
+  {
+    title: "Snuff",
+    url: bookshopSearchUrl("Snuff", "Chuck Palahniuk"),
+    author: "Chuck Palahniuk",
+  },
+  {
+    title: "Night",
+    url: bookshopSearchUrl("Night", "Elie Wiesel"),
+    author: "Elie Wiesel",
+  },
+  {
+    title: "In Cold Blood",
+    url: bookshopSearchUrl("In Cold Blood", "Truman Capote"),
+    author: "Truman Capote",
+  },
+];
+---
+
+<SubLayout title="Reading Log">
+  <h1>Reading Log</h1>
+  <div class= "py-8">
+      <p class="text-base text-balance text-taupe-600 leading-relaxed">Currently reading:</p>
+      {currentlyReading.map((book) => (
+        <p class="text-xl text-taupe-600">
+          <a
+            href={book.url}
+            target="_blank"
+            class="fraunces-italic text-2xl tracking-tighter underline text-taupe-950 decoration-taupe-700/40 hover:decoration-taupe-700 cursor-alias">
+            {book.title}</a
+          >{" "}
+          by {book.author}
+        </p>
+      ))}
+  </div>
+  <div class="flex md:flex-row gap-8 flex-col">
+    <div class="py-4">
+          <p class="text-base text-balance text-taupe-600 leading-relaxed">Have read:</p>
+        {haveRead.map((book) => (
+          <p class="text-base text-taupe-600 py-1">
+            <a
+              href={book.url}
+              target="_blank"
+              class="fraunces-italic text-lg tracking-tighter underline text-taupe-950 decoration-taupe-700/40 hover:decoration-taupe-700 cursor-alias">
+              {book.title}</a
+            >{" "}
+            by {book.author}
+          </p>
+        ))}
+    </div>
+  <div class="py-4">
+    <p class="text-base text-balance text-taupe-600 leading-relaxed">Want to read:</p>
+    {wantToRead.map((book) => (
+      <p class="text-base text-taupe-600 py-1">
+        <a
+          href={book.url}
+          target="_blank"
+          class="fraunces-italic text-lg tracking-tighter underline text-taupe-950 decoration-taupe-700/40 hover:decoration-taupe-700 cursor-alias">
+          {book.title}</a
+        >{" "}
+        by {book.author}
+      </p>
+    ))}
+    </div>
+    </div>
+</SubLayout>
+
+<style>
+  .fraunces-italic {
+    font-family: "Fraunces Variable", sans-serif;
+    font-weight: 300;
+    font-variation-settings:
+      "WONK" 0,
+      "SOFT" 100;
+    font-optical-sizing: auto;
+    text-decoration-thickness: .2ex;
+    text-underline-offset: .15ex;
+  }
+</style>
