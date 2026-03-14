@@ -3,8 +3,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import CaseStudy, { type Company, type CaseStudyProject } from '../components/CaseStudy.astro';
 
+import beLogo from '../images/be-logo.svg';
+import lockheedLogo from '../images/lockheed.jpeg';
+
 const bestEgg: Company = {
-  logo: '../images/be-logo.svg',
+  logo: '{beLogo.src}',
   title: 'Best Egg',
   description: 'Senior Product Designer',
   years: '2021 - Present',
@@ -27,6 +30,7 @@ const bestEggProjects: CaseStudyProject[] = [
     categories: ['Research', 'Prototyping'],
   },
 ];
+
 ---
 
 <BaseLayout title="Jake Culp - Senior Product Designer">
@@ -38,7 +42,7 @@ const bestEggProjects: CaseStudyProject[] = [
       <div class="shrink-0 overflow-hidden h-[80px] w-[80px] rounded-xl outline-2 -outline-offset-2 outline-black/10">
         <img
           class="h-full w-full aspect-square"
-          src={'../images/lockheed.jpeg'}
+          src={lockheedLogo.src}
           alt=""
           loading="lazy"
         />
