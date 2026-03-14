@@ -1,0 +1,23 @@
+---
+import SubLayout from '../layouts/SubLayout.astro';
+---
+
+<SubLayout title="Jitsu">
+<p
+  class="text-4xl flex m-auto max-w-4xl justify-center tabular-nums transition"
+><span id="countup">0</span>hrs</p>
+<script type="text/javascript">
+ const counter = document.getElementById("countup");
+  const target = 540;
+  let count = 0;
+
+  const interval = setInterval(() => {
+    count++;
+    counter.textContent = count;
+
+    if (count >= target) {
+      clearInterval(interval);
+    }
+  }, 20); // speed in milliseconds
+</script>
+</SubLayout>

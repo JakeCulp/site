@@ -37,13 +37,13 @@ const { company, projects } = Astro.props;
       />
     </div>
     <div class="">
-      <h2 class="font-semibold text-taupe-950 text-2xl/8 pb-1">
+      <h2 class="font-semibold text-taupe-950 text-2xl">
         {company.title}
       </h2>
-      <p class="font-normal text-taupe-500 text-base/5 pb-1">
+      <p class="font-normal text-taupe-500 text-base">
         {company.description}
       </p>
-      <p class="font-normal text-taupe-500 text-base/5 pb-1">{company.years}</p>
+      <p class="font-normal text-taupe-500 text-base">{company.years}</p>
     </div>
   </div>
   <!-- Cascading list of case study projects -->
@@ -52,7 +52,7 @@ const { company, projects } = Astro.props;
       {
         projects.map((project, i) => (
           <li class="m-auto">
-            <div class="flex flex-col gap-0 overflow-hidden bg-white rounded-xl shadow-woah hover:shadow-woah-more transition-shadow duration-200 ease-out cursor-pointer will-change-transform">
+            <div class="outline-taupe-200 hover:outline-8 flex flex-col gap-0 overflow-hidden bg-white rounded-xl shadow-woah transition-all duration-200 ease-out cursor-pointer will-change-transform">
               <div class="w-full">
                 <img
                   class="w-full h-full object-cover aspect-video"
