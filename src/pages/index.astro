@@ -4,7 +4,7 @@ import Hero from '../components/Hero.astro';
 import CaseStudy, { type Company, type CaseStudyProject } from '../components/CaseStudy.astro';
 
 const bestEgg: Company = {
-  logo: '/images/be-logo.svg',
+  logo: '../images/be-logo.svg',
   title: 'Best Egg',
   description: 'Senior Product Designer',
   years: '2021 - Present',
@@ -38,7 +38,7 @@ const bestEggProjects: CaseStudyProject[] = [
       <div class="shrink-0 overflow-hidden h-[80px] w-[80px] rounded-xl outline-2 -outline-offset-2 outline-black/10">
         <img
           class="h-full w-full aspect-square"
-          src={'/images/lockheed.jpeg'}
+          src={'../images/lockheed.jpeg'}
           alt=""
           loading="lazy"
         />
