@@ -1,6 +1,8 @@
 ---
 layout: '../layouts/SubLayout.astro'
 ---
+![google](../images/lockheed.jpeg)
+
 # About this Project
 
 This project is a personal site for Jake Culp, a product designer based in Philadelphia, Pennsylvania.
