@@ -11,10 +11,10 @@
 
   --shadow-woah-more:
     0px 0px 0px 1px rgba(0, 0, 0, 0.12), 0px 1px 2px -1px rgba(0, 0, 0, 0.12),
-    0px 2px 4px 0px rgba(0, 0, 0, 0.10);   
+    0px 2px 4px 0px rgba(0, 0, 0, 0.1);
 }
 
-html { 
+html {
   font-size: 20px;
 }
 
@@ -41,8 +41,9 @@ h1 {
   animation-delay: calc(var(--delay, 0ms) * var(--stagger, 0));
 }
 
-.animate-enter-individual-title {
-  --delay: 80ms;
+.animate-next {
+  animation: enter 800ms cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 240ms;
 }
 /* p {
   font-size: clamp(20px, 9.895px + 3.158vw, 32px);
