@@ -19,5 +19,10 @@
     "astro": "^5.17.1",
     "phosphor-astro": "^2.1.0",
     "tailwindcss": "4.2"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.1",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.7.2"
   }
 }
