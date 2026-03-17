@@ -47,7 +47,7 @@ const { variant = 'default' } = Astro.props
       </a>
     </div>
     )}
-    <ul class="flex list-none gap-2 p-0 m-0 text-xl">
+    <ul class="flex list-none gap-2 p-0 m-0 text-base">
       {
         links.map(({ href, label }) => {
           const active = isActive(href);
@@ -72,7 +72,7 @@ const { variant = 'default' } = Astro.props
         <a
           href="/resume.pdf"
           download
-          class="text-taupe-600 no-underline hover:text-taupe-900 hover:bg-taupe-100 p-3 rounded-lg font-medium shadow-woah hover:shadow-woah-more cursor-pointer"
+          class="text-taupe-600 no-underline hover:text-taupe-900 hover:bg-taupe-100 p-2 rounded-lg font-medium shadow-woah hover:shadow-woah-more cursor-pointer"
         >
           Resume
         </a>
