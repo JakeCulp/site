@@ -14,39 +14,46 @@ import ArrowBendUpLeft from "phosphor-astro/ArrowBendUpLeft.astro";
 
 // Determine current path
 const { url } = Astro;
-const currentPath = url.pathname.endsWith("/") && url.pathname.length > 1
-  ? url.pathname.slice(0, -1)
-  : url.pathname;
+const currentPath =
+  url.pathname.endsWith("/") && url.pathname.length > 1
+    ? url.pathname.slice(0, -1)
+    : url.pathname;
 
 // Utility function to check if link is active
 function isActive(href: string) {
   // Always normalize: treat "/about" and "/about/" as the same
-  const normalizedHref = href.endsWith("/") && href.length > 1 ? href.slice(0, -1) : href;
+  const normalizedHref =
+    href.endsWith("/") && href.length > 1 ? href.slice(0, -1) : href;
   return normalizedHref === currentPath;
 }
 
 interface Props {
-  variant?: 'default' | 'back'
+  variant?: "default" | "back";
 }
 
-const { variant = 'default' } = Astro.props
+const { variant = "default" } = Astro.props;
 ---
 
-<header class="pt-12 max-w-4xl m-auto px-6 lg:px-0 will-change-contents transition">
+<header
+  class="pt-12 max-w-4xl m-auto px-6 xl:px-0 will-change-contents transition"
+>
   <nav
     class="mx-auto flex items-center justify-between"
     aria-label="Main navigation"
-  >{variant === 'default' ? (
-    <a href="/" class="">
-      <Logo />
-    </a>
-    ) : (
-    <div class="p-3 bg-taupe-100 rounded-full transition hover:bg-taupe-200 ">
-      <a href="/">
-        <ArrowBendUpLeft class="overflow-hidden w-5 h-5 fill-taupe-600 hover:fill-taupe-900" />
-      </a>
-    </div>
-    )}
+  >
+    {
+      variant === "default" ? (
+        <a href="/" class="">
+          <Logo />
+        </a>
+      ) : (
+        <div class="p-3 bg-taupe-100 rounded-full transition hover:bg-taupe-200 ">
+          <a href="/">
+            <ArrowBendUpLeft class="overflow-hidden w-5 h-5 fill-taupe-600 hover:fill-taupe-900" />
+          </a>
+        </div>
+      )
+    }
     <ul class="flex list-none gap-2 p-0 m-0 text-base">
       {
         links.map(({ href, label }) => {
@@ -56,9 +63,7 @@ const { variant = 'default' } = Astro.props
               <a
                 href={href}
                 class={`text-taupe-600 no-underline hover:text-taupe-900 hover:bg-taupe-100 p-2 rounded-lg transition ${
-                  active
-                    ? "bg-taupe-100 text-taupe-900 font-medium"
-                    : ""
+                  active ? "bg-taupe-100 text-taupe-900 font-medium" : ""
                 }`}
                 aria-current={active ? "page" : undefined}
               >

@@ -1,11 +1,12 @@
 ---
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
-import '@fontsource/fraunces';
-import '@fontsource-variable/public-sans';
-import '@fontsource/geist';
-import '@fontsource-variable/fraunces/full.css';
-import HomeNavigation from '../components/Navigation.astro';
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+import "@fontsource/fraunces";
+import "@fontsource-variable/public-sans";
+import "@fontsource/geist";
+import "@fontsource-variable/fraunces/full.css";
+import "@fontsource-variable/libre-franklin";
+import HomeNavigation from "../components/Navigation.astro";
 
 interface Props {
   title: string;
@@ -23,8 +24,10 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="font-sans antialiased bg-taupe-50 text-taupe-950 max-w-4xl mx-auto cursor-[url('../images/cursor.svg'),pointer]">
-    <HomeNavigation variant='back'/>
+  <body
+    class="font-sans antialiased bg-white text-taupe-950 max-w-4xl mx-auto cursor-[url('../images/cursor.svg'),pointer]"
+  >
+    <HomeNavigation variant="back" />
     <main class="mx-auto px-6 py-8">
       <slot />
     </main>
@@ -34,7 +37,7 @@ const { title } = Astro.props;
 <style>
   .hero__subheadline a {
     color: var(--color-green-700);
-    text-decoration-thickness: .2ex;
-    text-underline-offset: .15ex;
+    text-decoration-thickness: 0.2ex;
+    text-underline-offset: 0.15ex;
   }
 </style>
