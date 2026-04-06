@@ -29,12 +29,14 @@ const wantToRead = [
     author: "Benjamin Labatut",
   },
   {
-    title: "Everything is Tuberculosis: The History and Persistence of Our Deadliest Infection",
+    title:
+      "Everything is Tuberculosis: The History and Persistence of Our Deadliest Infection",
     url: "https://bookshop.org/p/books/everything-is-tuberculosis-signed-edition-the-history-and-persistence-of-our-deadliest-infection-john-green/57e35f61394b6daf",
     author: "John Green",
   },
   {
-    title: "The Zorg: A Tale of Greed and Murder That Inspired the Abolition of Slavery",
+    title:
+      "The Zorg: A Tale of Greed and Murder That Inspired the Abolition of Slavery",
     url: "https://bookshop.org/p/books/the-zorg-a-tale-of-greed-and-murder-that-inspired-the-abolition-of-slavery-siddharth-kara/c2294b3fcf0af96b",
     author: "Siddharth Kara",
   },
@@ -210,7 +212,7 @@ const haveRead = [
     title: "Kitchen Confidential: Adventures in the Culinary Underbelly",
     url: bookshopSearchUrl(
       "Kitchen Confidential: Adventures in the Culinary Underbelly",
-      "Anthony Bourdain"
+      "Anthony Bourdain",
     ),
     author: "Anthony Bourdain",
   },
@@ -232,52 +234,67 @@ const haveRead = [
 ];
 ---
 
-<SubLayout title="Reading Log">
+<SubLayout title="Jake Culp, Senior Product Designer">
   <h1>Reading Log</h1>
-  <div class= "py-8">
-      <p class="text-base text-balance text-taupe-600 leading-relaxed">Currently reading:</p>
-      {currentlyReading.map((book) => (
+  <div class="py-8">
+    <p class="text-base text-balance text-taupe-600 leading-relaxed">
+      Currently reading:
+    </p>
+    {
+      currentlyReading.map((book) => (
         <p class="text-xl text-taupe-600">
           <a
             href={book.url}
             target="_blank"
-            class="fraunces-italic text-2xl tracking-tighter underline text-taupe-950 decoration-taupe-700/40 hover:decoration-taupe-700 cursor-alias">
-            {book.title}</a
-          >{" "}
+            class="fraunces-italic text-2xl tracking-tighter underline text-taupe-950 decoration-taupe-700/40 hover:decoration-taupe-700 cursor-alias"
+          >
+            {book.title}
+          </a>{" "}
           by {book.author}
         </p>
-      ))}
+      ))
+    }
   </div>
   <div class="flex md:flex-row gap-8 flex-col">
     <div class="py-4">
-          <p class="text-base text-balance text-taupe-600 leading-relaxed">Have read:</p>
-        {haveRead.map((book) => (
+      <p class="text-base text-balance text-taupe-600 leading-relaxed">
+        Have read:
+      </p>
+      {
+        haveRead.map((book) => (
           <p class="text-base text-taupe-600 py-1">
             <a
               href={book.url}
               target="_blank"
-              class="fraunces-italic text-lg tracking-tighter underline text-taupe-950 decoration-taupe-700/40 hover:decoration-taupe-700 cursor-alias">
-              {book.title}</a
-            >{" "}
+              class="fraunces-italic text-lg tracking-tighter underline text-taupe-950 decoration-taupe-700/40 hover:decoration-taupe-700 cursor-alias"
+            >
+              {book.title}
+            </a>{" "}
             by {book.author}
           </p>
-        ))}
+        ))
+      }
     </div>
-  <div class="py-4">
-    <p class="text-base text-balance text-taupe-600 leading-relaxed">Want to read:</p>
-    {wantToRead.map((book) => (
-      <p class="text-base text-taupe-600 py-1">
-        <a
-          href={book.url}
-          target="_blank"
-          class="fraunces-italic text-lg tracking-tighter underline text-taupe-950 decoration-taupe-700/40 hover:decoration-taupe-700 cursor-alias">
-          {book.title}</a
-        >{" "}
-        by {book.author}
+    <!-- <div class="py-4">
+      <p class="text-base text-balance text-taupe-600 leading-relaxed">
+        Want to read:
       </p>
-    ))}
-    </div>
-    </div>
+      {
+        wantToRead.map((book) => (
+          <p class="text-base text-taupe-600 py-1">
+            <a
+              href={book.url}
+              target="_blank"
+              class="fraunces-italic text-lg tracking-tighter underline text-taupe-950 decoration-taupe-700/40 hover:decoration-taupe-700 cursor-alias"
+            >
+              {book.title}
+            </a>{" "}
+            by {book.author}
+          </p>
+        ))
+      }
+    </div> -->
+  </div>
 </SubLayout>
 
 <style>
@@ -288,7 +305,7 @@ const haveRead = [
       "WONK" 0,
       "SOFT" 100;
     font-optical-sizing: auto;
-    text-decoration-thickness: .2ex;
-    text-underline-offset: .15ex;
+    text-decoration-thickness: 0.2ex;
+    text-underline-offset: 0.15ex;
   }
 </style>
