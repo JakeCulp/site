@@ -16,6 +16,31 @@
 
 html {
   font-size: 16px;
+  cursor:
+    url("../images/cursor.svg") 0 0,
+    auto;
+}
+
+p,
+ul,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  cursor:
+    url("../images/CursorText.svg") 7 12,
+    auto;
+}
+
+a,
+a img,
+img {
+  cursor:
+    url("../images/HandPointing.svg") 3 0,
+    auto;
 }
 
 h1 {

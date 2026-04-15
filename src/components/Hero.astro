@@ -32,10 +32,10 @@ const links = [
     <span class="text-taupe-500">I'm a </span>product designer <span
       class="text-taupe-500">based in</span
     >
-    <span class="text-green-700">Philadelphia</span>, Pennsylvania.
+    <span id="philly-team">Philadelphia</span>, Pennsylvania.
   </h1>
   <p
-    class="hero__subheadline md:text-xl text-taupe-500 pt-8 leading-normal text-pretty py-12 max-w-prose"
+    class="hero__subheadline md:text-xl text-taupe-500 pt-8 leading-relaxed py-12 max-w-prose"
   >
     I design digital products with a focus on clarity, systems, and making
     complex experiences feel intuitive. I approach design as both craft and
@@ -43,13 +43,22 @@ const links = [
     help products scale.
   </p>
 </section>
+<script is:inline>
+  (function () {
+    var el = document.getElementById("philly-team");
+    if (!el) return;
+    var colors = ["text-orange-600", "text-red-600", "text-green-600"];
+    var randomColor = colors[Math.floor(Math.random() * colors.length)];
+    el.classList.add(randomColor);
+  })();
+</script>
 <section class="flex max-w-4xl mx-auto gap-4 pb-8">
   <ul class="flex flex-row gap-4">
     {
       links.map(({ href, label }) => {
         const active = isActive(href);
         return (
-          <li class="transition ease-out duration-200 hover:translate-y-0.5">
+          <li class="transition ease-out duration-200 hover:translate-y-0.25">
             <a
               href={href}
               class={`text-taupe-600 hover:text-taupe-900 hover:bg-taupe-100 hover:no-underline p-2 rounded-lg transition ease-out duration-200 ${
