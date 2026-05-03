@@ -21,13 +21,16 @@ const { variant = "default" } = Astro.props;
 
 <header class="pt-12 max-w-4xl m-auto flex justify-center">
   <nav
-    class="mx-auto flex items-center justify-between gap-4 p-3 rounded-full hover:bg-mist-50 rotate-35 hover:rotate-0 transition-transform ease-out"
+    class="mx-auto flex items-center justify-between gap-4"
     aria-label="Main navigation"
   >
     {
       variant === "default" ? (
-        <a href="/" class="">
-          <Logo />
+        <a
+          href="/"
+          class="p-1 rounded-full hover:rotate-35 transition-transform ease-out"
+        >
+          <Logo class="" />
         </a>
       ) : (
         <div class="p-3 bg-mist-100 rounded-full transition hover:bg-mist-200 ">
