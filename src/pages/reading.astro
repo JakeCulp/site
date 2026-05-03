@@ -6,18 +6,13 @@ const bookshopSearchUrl = (title: string, author: string) =>
 
 const currentlyReading = [
   {
-    title: "Typhoid Mary: An Urban Historical",
-    url: "https://bookshop.org/p/books/typhoid-mary-an-urban-historical-anthony-bourdain/e307e42714a10cad",
-    author: "Anthony Bourdain",
+    title: "Jurassic Park",
+    url: "https://bookshop.org/p/books/jurassic-park-michael-crichton/14708249",
+    author: "Michael Crichton",
   },
 ];
 
 const wantToRead = [
-  {
-    title: "Typhoid Mary: An Urban Historical",
-    url: "https://bookshop.org/p/books/typhoid-mary-an-urban-historical-anthony-bourdain/e307e42714a10cad",
-    author: "Anthony Bourdain",
-  },
   {
     title: "Football",
     url: "https://bookshop.org/p/books/football-chuck-klosterman/6f7b5ee7868210ba",
@@ -74,11 +69,6 @@ const wantToRead = [
     title: "The Rape of Nanking",
     url: "https://bookshop.org/p/books/the-rape-of-nanking-the-forgotten-holocaust-of-world-war-ii-iris-chang/f768c73c3d2a3a71",
     author: "Iris Chang",
-  },
-  {
-    title: "Jurassic Park",
-    url: "https://bookshop.org/p/books/jurassic-park-michael-crichton/14708249",
-    author: "Michael Crichton",
   },
   {
     title: "All Quiet on the Western Front",
@@ -189,6 +179,11 @@ const wantToRead = [
 
 const haveRead = [
   {
+    title: "Typhoid Mary: An Urban Historical",
+    url: "https://bookshop.org/p/books/typhoid-mary-an-urban-historical-anthony-bourdain/e307e42714a10cad",
+    author: "Anthony Bourdain",
+  },
+  {
     title: "Every Tool's a Hammer",
     url: "https://bookshop.org/p/books/every-tool-s-a-hammer-life-is-what-you-make-it-adam-savage/6704724",
     author: "Adam Savage",
@@ -241,46 +236,54 @@ const haveRead = [
 
 <SubLayout title="Jake Culp, Senior Product Designer">
   <!-- <h1>Reading Log</h1> -->
-  <div class="py-8">
-    <p class="text-base text-balance text-taupe-600 leading-relaxed">
-      Currently reading:
-    </p>
-    {
-      currentlyReading.map((book) => (
-        <p class="text-xl text-taupe-600">
-          <a
-            href={book.url}
-            target="_blank"
-            class="fraunces-italic text-2xl tracking-tighter underline text-taupe-950 decoration-taupe-700/40 hover:decoration-taupe-700 cursor-alias"
-          >
-            {book.title}
-          </a>{" "}
-          by {book.author}
-        </p>
-      ))
-    }
-  </div>
-  <div class="flex md:flex-row gap-8 flex-col">
-    <div class="py-4">
-      <p class="text-base text-balance text-taupe-600 leading-relaxed">
-        Have read:
+  <div class="flex flex-col sm:flex-row gap-8 items-center">
+    <div
+      class="py-4 px-4 bg-taupe-50 border-taupe-200 border rounded-xl flex flex-col w-full sm:w-1/2"
+    >
+      <img
+        src="https://images-us.bookshop.org/ingram/9780345538987.jpg?v=415e22f714dd1012d502c1ce1b568df8"
+        class="w-[200px]"
+        alt=""
+      />
+      <p class="text-sm text-balance text-taupe-600 leading-relaxed">
+        Currently reading:
       </p>
       {
-        haveRead.map((book) => (
-          <p class="text-base text-taupe-600 py-1">
+        currentlyReading.map((book) => (
+          <p class="text-base text-taupe-600">
             <a
               href={book.url}
               target="_blank"
-              class="fraunces-italic text-lg tracking-tighter underline text-taupe-950 decoration-taupe-700/40 hover:decoration-taupe-700 cursor-alias"
+              class="underline text-taupe-950 decoration-taupe-700/40 hover:decoration-taupe-700 cursor-alias"
             >
               {book.title}
-            </a>{" "}
+            </a>
             by {book.author}
           </p>
         ))
       }
     </div>
-    <!-- <div class="py-4">
+    <div class="flex md:flex-row gap-8 flex-col size-full">
+      <div class="py-4 px-4 flex flex-col size-fit">
+        <p class="text-sm text-balance text-taupe-600 leading-relaxed">
+          Have read:
+        </p>
+        {
+          haveRead.map((book) => (
+            <p class="text-base text-taupe-600 py-1">
+              <a
+                href={book.url}
+                target="_blank"
+                class="underline text-taupe-950 decoration-taupe-700/40 hover:decoration-taupe-700 cursor-alias"
+              >
+                {book.title}
+              </a>{" "}
+              by {book.author}
+            </p>
+          ))
+        }
+      </div>
+      <!-- <div class="py-4">
       <p class="text-base text-balance text-taupe-600 leading-relaxed">
         Want to read:
       </p>
@@ -299,6 +302,7 @@ const haveRead = [
         ))
       }
     </div> -->
+    </div>
   </div>
 </SubLayout>
 

@@ -47,7 +47,12 @@ const links = [
   (function () {
     var el = document.getElementById("philly-team");
     if (!el) return;
-    var colors = ["text-orange-600", "text-red-600", "text-green-600"];
+    var colors = [
+      "text-orange-600",
+      "text-red-600",
+      "text-green-600",
+      "text-blue-600",
+    ];
     var randomColor = colors[Math.floor(Math.random() * colors.length)];
     el.classList.add(randomColor);
   })();

@@ -29,28 +29,6 @@ const { company, projects } = Astro.props;
   class="max-w-4xl mx-auto flex-row items-stretch py-4 animate-enter"
   aria-labelledby="case-study-company"
 >
-  <!-- Company header: logo + title, job description, years -->
-  <div class="flex justify-between" id="case-study-company">
-    <div class="flex align-middle gap-2">
-      <div
-        class="shrink-0 overflow-hidden h-8 w-8 rounded-md outline-2 -outline-offset-2 outline-black/10"
-      >
-        <img
-          class="h-full w-full aspect-square"
-          src={company.logo}
-          alt=""
-          loading="lazy"
-        />
-      </div>
-      <p class="font-semibold text-taupe-950 text-base self-center">
-        {company.title}
-      </p>
-    </div>
-    <p class="font-normal text-taupe-500 text-sm self-center">
-      {company.description}
-    </p>
-  </div>
-
   <!-- <p class="font-normal text-taupe-500 text-sm">{company.years}</p> -->
 </section>
 <!-- Cascading list of case study projects -->
@@ -59,17 +37,17 @@ const { company, projects } = Astro.props;
     {
       projects.map((project, i) => (
         <li class="w-full">
-          <div class="w-full outline-taupe-200 hover:outline-8 hover:scale-101 outline-1 flex flex-col gap-0 overflow-hidden bg-white rounded-xl transition-all duration-150 ease-out cursor-pointer will-change-transform">
+          <div class="w-full flex flex-col gap-0">
             <div class="w-full">
               <img
-                class="w-full h-full object-cover aspect-video"
+                class="w-full h-full object-cover sm:aspect-5/3 aspect-square hover:scale-101 transition-all duration-150 ease-out cursor-pointer will-change-transform rounded-xl"
                 src={project.image}
                 alt=""
                 loading="lazy"
               />
             </div>
             <div class="flex flex-col p-4">
-              <h3 class="text-balance text-2xl text-taupe-950 leading-relaxed font-semibold">
+              <h3 class="text-balance text-xl text-taupe-950 leading-normal font-semibold text-center">
                 {project.title}
               </h3>
               {project.categories?.length
@@ -101,7 +79,7 @@ const { company, projects } = Astro.props;
 
                     return (
                       <ul
-                        class="flex flex-wrap gap-2 mt-2 list-none m-0 p-0"
+                        class="flex flex-wrap gap-2 mt-1 list-none m-0 p-0 justify-center-safe text-sm"
                         aria-label="Categories"
                       >
                         {project.categories.map((category, idx) => {
