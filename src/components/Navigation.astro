@@ -11,7 +11,6 @@ const links = [
 
 import Logo from "../images/logo.svg";
 import ArrowBendUpLeft from "phosphor-astro/ArrowBendUpLeft.astro";
-import Weather from "./Weather.astro";
 
 interface Props {
   variant?: "default" | "back";
@@ -20,11 +19,9 @@ interface Props {
 const { variant = "default" } = Astro.props;
 ---
 
-<header
-  class="pt-12 max-w-4xl m-auto px-6 xl:px-0 will-change-contents transition"
->
+<header class="pt-12 max-w-4xl m-auto flex justify-center">
   <nav
-    class="mx-auto flex items-center justify-between gap-4"
+    class="mx-auto flex items-center justify-between gap-4 p-3 rounded-full hover:bg-mist-50 rotate-35 hover:rotate-0 transition-transform ease-out"
     aria-label="Main navigation"
   >
     {
@@ -33,13 +30,12 @@ const { variant = "default" } = Astro.props;
           <Logo />
         </a>
       ) : (
-        <div class="p-3 bg-taupe-100 rounded-full transition hover:bg-taupe-200 ">
+        <div class="p-3 bg-mist-100 rounded-full transition hover:bg-mist-200 ">
           <a href="/">
-            <ArrowBendUpLeft class="overflow-hidden w-5 h-5 fill-taupe-600 hover:fill-taupe-900" />
+            <ArrowBendUpLeft class="overflow-hidden w-5 h-5 fill-mist-600 hover:fill-mist-900" />
           </a>
         </div>
       )
     }
-    {variant === "default" ? <Weather /> : null}
   </nav>
 </header>
