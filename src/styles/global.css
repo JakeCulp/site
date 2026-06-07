@@ -35,6 +35,13 @@ h6 {
     auto;
 }
 
+p,
+ul,
+ol {
+  line-height: 160%;
+  letter-spacing: 0;
+}
+
 a,
 a img,
 img {

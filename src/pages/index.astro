@@ -1,4 +1,5 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
 import CaseStudy, {
@@ -7,7 +8,8 @@ import CaseStudy, {
 } from "../components/CaseStudy.astro";
 
 import beLogo from "../images/be-logo.svg";
-import lockheedLogo from "../images/lockheed.jpeg";
+
+const studies = await getCollection("caseStudies");
 
 const bestEgg: Company = {
   logo: beLogo.src,
@@ -16,23 +18,12 @@ const bestEgg: Company = {
   years: "2021 - Present",
 };
 
-const bestEggProjects: CaseStudyProject[] = [
-  {
-    image: "https://picsum.photos/1200/800",
-    title: "Designing a Clearer Loan Offer Experience",
-    categories: ["Conversion", "Responsive", "UX Strategy"],
-  },
-  {
-    image: "https://picsum.photos/1000/800",
-    title: "Design System",
-    categories: ["Design Systems", "Components"],
-  },
-  {
-    image: "https://picsum.photos/1000/700",
-    title: "Case Study Title",
-    categories: ["Research", "Prototyping"],
-  },
-];
+const bestEggProjects: CaseStudyProject[] = studies.map((study) => ({
+  slug: study.id,
+  image: study.data.cardImage,
+  title: study.data.title,
+  categories: study.data.categories,
+}));
 ---
 
 <BaseLayout title="Jake Culp, Senior Product Designer">

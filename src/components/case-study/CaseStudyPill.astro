@@ -1,0 +1,31 @@
+---
+import XCircle from "phosphor-astro/XCircleDuotone.astro";
+import Info from "phosphor-astro/InfoDuotone.astro";
+import CheckCircle from "phosphor-astro/CheckCircleDuotone.astro";
+
+interface Props {
+  variant: "problem" | "insight" | "result";
+  text: string;
+}
+
+const { variant, text } = Astro.props;
+
+const iconClass = {
+  problem: "text-red-700",
+  insight: "text-mist-700",
+  result: "text-green-700",
+}[variant];
+---
+
+<div class="flex items-center gap-2.5 rounded-[10px] bg-mist-100 p-2.5 w-fit">
+  {
+    variant === "problem" ? (
+      <XCircle class={`h-6 w-6 shrink-0 fill-current ${iconClass}`} />
+    ) : variant === "insight" ? (
+      <Info class={`h-6 w-6 shrink-0 fill-current ${iconClass}`} />
+    ) : (
+      <CheckCircle class={`h-6 w-6 shrink-0 fill-current ${iconClass}`} />
+    )
+  }
+  <span class="text-base leading-snug text-mist-950">{text}</span>
+</div>

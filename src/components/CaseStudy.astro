@@ -12,6 +12,7 @@ export interface Company {
 }
 
 export interface CaseStudyProject {
+  slug: string;
   image: string;
   title: string;
   categories?: string[];
@@ -37,10 +38,13 @@ const { company, projects } = Astro.props;
     {
       projects.map((project, i) => (
         <li class="w-full">
-          <div class="w-full flex flex-col gap-0">
+          <a
+            href={`/work/${project.slug}`}
+            class="w-full flex flex-col gap-0 no-underline hover:no-underline"
+          >
             <div class="w-full">
               <img
-                class="w-full h-full object-cover sm:aspect-5/3 aspect-square hover:scale-101 transition-all duration-150 ease-out cursor-pointer will-change-transform rounded-xl"
+                class="w-full h-full object-cover sm:aspect-5/3 aspect-square hover:scale-101 transition-all duration-150 ease-out will-change-transform rounded-xl"
                 src={project.image}
                 alt=""
                 loading="lazy"
@@ -101,7 +105,7 @@ const { company, projects } = Astro.props;
                   })()
                 : null}
             </div>
-          </div>
+          </a>
         </li>
       ))
     }

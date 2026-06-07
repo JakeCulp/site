@@ -1,0 +1,18 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { render } from "astro:content";
+import CaseStudyHero from "./CaseStudyHero.astro";
+
+interface Props {
+  study: CollectionEntry<"caseStudies">;
+}
+
+const { study } = Astro.props;
+const { title, role, team, heroImage } = study.data;
+const { Content } = await render(study);
+---
+
+<article class="flex flex-col gap-12 pb-12">
+  <CaseStudyHero title={title} role={role} team={team} heroImage={heroImage} />
+  <Content />
+</article>

@@ -1,0 +1,26 @@
+---
+import CaseStudyPill from "./CaseStudyPill.astro";
+
+interface Props {
+  variant: "problem" | "insight" | "result";
+  items: string[];
+  wrap?: boolean;
+}
+
+const { variant, items, wrap = false } = Astro.props;
+---
+
+<ul
+  class:list={[
+    "m-0 flex list-none flex-col gap-2.5 p-0 ",
+    wrap && "sm:flex-row sm:flex-wrap",
+  ]}
+>
+  {
+    items.map((item) => (
+      <li class:list={[wrap && "sm:max-w-full"]}>
+        <CaseStudyPill variant={variant} text={item} />
+      </li>
+    ))
+  }
+</ul>
