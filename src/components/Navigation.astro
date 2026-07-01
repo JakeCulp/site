@@ -33,11 +33,11 @@ const { variant = "default" } = Astro.props;
           <Logo class="" />
         </a>
       ) : (
-        <div class="p-3 bg-mist-100 rounded-full transition hover:bg-mist-200 ">
-          <a href="/">
+        <a href="/">
+          <div class="p-3 bg-mist-100 rounded-full transition hover:bg-mist-200 ">
             <ArrowBendUpLeft class="overflow-hidden w-5 h-5 fill-mist-600 hover:fill-mist-900" />
-          </a>
-        </div>
+          </div>
+        </a>
       )
     }
   </nav>

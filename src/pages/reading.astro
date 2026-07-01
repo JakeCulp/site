@@ -235,65 +235,38 @@ const haveRead = [
 ---
 
 <SubLayout title="Jake Culp, Senior Product Designer">
-  <!-- <h1>Reading Log</h1> -->
-  <div class="flex flex-col sm:flex-row gap-8 items-center">
-    <div
-      class="py-4 px-4 bg-mist-50 border-mist-200 border rounded-xl flex flex-col w-full sm:w-1/2"
-    >
-      <img
-        src="https://images-us.bookshop.org/ingram/9780345538987.jpg?v=415e22f714dd1012d502c1ce1b568df8"
-        class="w-[200px]"
-        alt=""
-      />
-      <p class="text-sm text-balance text-mist-600 leading-relaxed">
-        Currently reading:
-      </p>
-      {
-        currentlyReading.map((book) => (
-          <p class="text-base text-mist-600">
-            <a
-              href={book.url}
-              target="_blank"
-              class="underline text-mist-950 decoration-mist-700/40 hover:decoration-mist-700 cursor-alias"
-            >
-              {book.title}
-            </a>
-            by {book.author}
-          </p>
-        ))
-      }
-    </div>
-    <div class="flex md:flex-row gap-8 flex-col size-full">
-      <div class="py-4 px-4 flex flex-col size-fit">
-        <p class="text-sm text-balance text-mist-600 leading-relaxed">
-          Have read:
+  <div class="mt-16 text-center"><h1>What I'm Reading</h1></div>
+  <p>
+    This list started in 2025, when I decided I needed to read more books, a
+    decision I haven't regretted since.
+  </p>
+  <div class="flex flex-col">
+    <p class="text-balance text-mist-600 leading-relaxed">Currently:</p>
+    {
+      currentlyReading.map((book) => (
+        <p class=" text-mist-600">
+          <a
+            href={book.url}
+            target="_blank"
+            class="underline text-mist-950 decoration-mist-700/40 hover:decoration-mist-700 cursor-alias"
+          >
+            {book.title}
+          </a>
+          by {book.author}
         </p>
-        {
-          haveRead.map((book) => (
-            <p class="text-base text-mist-600 py-1">
-              <a
-                href={book.url}
-                target="_blank"
-                class="underline text-mist-950 decoration-mist-700/40 hover:decoration-mist-700 cursor-alias"
-              >
-                {book.title}
-              </a>{" "}
-              by {book.author}
-            </p>
-          ))
-        }
-      </div>
-      <!-- <div class="py-4">
-      <p class="text-base text-balance text-mist-600 leading-relaxed">
-        Want to read:
-      </p>
+      ))
+    }
+  </div>
+  <div class="flex md:flex-row gap-8 flex-col size-full">
+    <div class="flex flex-col size-fit">
+      <p class="text-balance text-mist-600 leading-relaxed">Have read:</p>
       {
-        wantToRead.map((book) => (
+        haveRead.map((book) => (
           <p class="text-base text-mist-600 py-1">
             <a
               href={book.url}
               target="_blank"
-              class="fraunces-italic text-lg tracking-tighter underline text-mist-950 decoration-mist-700/40 hover:decoration-mist-700 cursor-alias"
+              class="underline text-mist-950 decoration-mist-700/40 hover:decoration-mist-700 cursor-alias"
             >
               {book.title}
             </a>{" "}
@@ -301,7 +274,6 @@ const haveRead = [
           </p>
         ))
       }
-    </div> -->
     </div>
   </div>
 </SubLayout>
