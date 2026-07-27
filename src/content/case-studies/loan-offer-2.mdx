@@ -1,0 +1,113 @@
+---
+title: Designing a Clearer Loan Offer Experience
+role: Design Lead
+team:
+  - Product Owner
+  - Engineering Lead
+  - Lead Developer
+heroImage: /images/case-studies/offers-collage.svg
+cardImage: /images/case-studies/offers-collage.svg
+categories:
+  - Conversion
+  - Responsive
+  - UX Strategy
+---
+
+import CaseStudySection from "../../components/case-study/CaseStudySection.astro";
+import CaseStudyImage from "../../components/case-study/CaseStudyImage.astro";
+import CaseStudyPillList from "../../components/case-study/CaseStudyPillList.astro";
+import CaseStudyCallout from "../../components/case-study/CaseStudyCallout.astro";
+import CaseStudyCompetitiveGrid from "../../components/case-study/CaseStudyCompetitiveGrid.astro";
+
+<CaseStudySection label="Project Overview">
+
+After a company-wide rebrand, it was time to advance our offers experience and give the user more clarity, control, and understanding over what loan they should choose.
+
+</CaseStudySection>
+
+<CaseStudySection label="Problem">
+
+The offers page is one of the most important moments in the customer flow for Best Egg. The user is excited that they've been approved and can choose a loan that can help them along on their financial journey. However, the current experience creates heavy friction for the user.
+
+<CaseStudyImage src="/images/case-studies/offers_page.png" alt="" />
+<CaseStudyImage src="/images/case-studies/offer_details.svg" alt="" />
+<CaseStudyPillList
+  variant="problem"
+  items={[
+    "Loan details were difficult to compare",
+    "Only two loans could be viewed together on mobile (60% of our users apply on mobile)",
+    "Trust signals were weak at a high-stakes financial moment",
+    "It was difficult to scale design to accompany multiple product lines",
+  ]}
+/>
+
+These issues resulted in 40% drop off rate between offers page and verification next steps, and increasing customer support questions for our agents.
+
+</CaseStudySection>
+
+<CaseStudySection label="Key Insights & Competitive Research">
+
+<CaseStudyCompetitiveGrid
+  competitors={[
+    { name: "Marcus", image: "/images/case-studies/marcus.png" },
+    { name: "Happy Money", image: "/images/case-studies/happy-money.png" },
+    { name: "Upstart", image: "/images/case-studies/upstart.png" },
+  ]}
+/>
+
+We combined user research, customer feedback, and competitive analysis to understand where borrowers struggled and how best-in-class financial products approached similar decisions.
+
+<CaseStudyPillList
+  variant="insight"
+  wrap
+  items={[
+    "Users think in monthly payments; let's make this clear up front",
+    "Simplify the interface and prioritize the information users actually use to decide.",
+    "Instead of overwhelming users, competitors reveal deeper financial details only when needed.",
+  ]}
+/>
+
+</CaseStudySection>
+
+<CaseStudySection label="Refined Problem Statement">
+
+<h2 class="text-pretty">
+  How might we help borrowers quickly understand their options and confidently
+  choose the right loan?
+</h2>
+
+</CaseStudySection>
+
+<CaseStudySection label="Solution">
+
+<CaseStudyImage src="/images/case-studies/solution.png" alt="" />
+
+We elevated the **monthly payment** to the primary element.
+
+</CaseStudySection>
+
+<CaseStudySection label="">
+
+<CaseStudyImage src="/images/case-studies/solution.png" alt="" />
+
+</CaseStudySection>
+
+<CaseStudySection label="Results">
+
+<CaseStudyPillList
+  variant="result"
+  items={[
+    "12% increase in loan offer acceptance",
+    "7% decrease in support inquiries related to loan terms",
+    "9% increase on month-to-month loan originations",
+  ]}
+/>
+
+</CaseStudySection>
+
+<CaseStudySection label="Takeaways">
+
+- Financial products require clarity above all, designing for financial decisions means prioritizing confidence and comprehension.
+- Small hierarchy changes drive big impact, elevating the monthly payment dramatically improved decision speed.
+
+</CaseStudySection>

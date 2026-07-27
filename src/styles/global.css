@@ -51,6 +51,7 @@ h1 {
     "SOFT" 100;
   font-optical-sizing: auto;
   font-size: 4rem;
+  letter-spacing: -2px;
 }
 
 h2 {

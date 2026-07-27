@@ -241,14 +241,14 @@ const haveRead = [
     decision I haven't regretted since.
   </p>
   <div class="flex flex-col">
-    <p class="text-balance text-mist-600 leading-relaxed">Currently:</p>
+    <p class="text-balance text-neutral-600 leading-relaxed">Currently:</p>
     {
       currentlyReading.map((book) => (
-        <li class=" text-mist-600 list-inside">
+        <li class=" text-neutral-600 list-inside">
           <a
             href={book.url}
             target="_blank"
-            class="underline text-mist-950 decoration-mist-700/40 hover:decoration-mist-700 cursor-alias"
+            class="underline text-neutral-950 decoration-neutral-700/40 hover:decoration-neutral-700 cursor-alias"
           >
             {book.title}
           </a>
@@ -259,14 +259,14 @@ const haveRead = [
   </div>
   <div class="flex md:flex-row gap-8 flex-col size-full">
     <div class="flex flex-col size-fit">
-      <p class="text-balance text-mist-600 leading-relaxed">Have read:</p>
+      <p class="text-balance text-neutral-600 leading-relaxed">Have read:</p>
       {
         haveRead.map((book) => (
-          <li class="text-base text-mist-600 py-1 list-inside">
+          <li class="text-base text-neutral-600 py-1 list-inside">
             <a
               href={book.url}
               target="_blank"
-              class="underline text-mist-950 decoration-mist-700/40 hover:decoration-mist-700 cursor-alias"
+              class="underline text-neutral-950 decoration-neutral-700/40 hover:decoration-neutral-700 cursor-alias"
             >
               {book.title}
             </a>{" "}
