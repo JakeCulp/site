@@ -1,14 +1,15 @@
 ---
 import SubLayout from "../layouts/SubLayout.astro";
+import PhysicsCanvas from "../components/physics.astro";
 
 const bookshopSearchUrl = (title: string, author: string) =>
   `https://bookshop.org/search?query=${encodeURIComponent(`${title} ${author}`)}`;
 
 const currentlyReading = [
   {
-    title: "Jurassic Park",
-    url: "https://bookshop.org/p/books/jurassic-park-michael-crichton/14708249",
-    author: "Michael Crichton",
+    title: "Beloved",
+    url: "https://bookshop.org/p/books/beloved-toni-morrison/285459",
+    author: "Toni Morrison",
   },
 ];
 
@@ -43,11 +44,6 @@ const wantToRead = [
   {
     title: "The Bluest Eye",
     url: "https://bookshop.org/p/books/the-bluest-eye-toni-morrison/8492901",
-    author: "Toni Morrison",
-  },
-  {
-    title: "Beloved",
-    url: "https://bookshop.org/p/books/beloved-toni-morrison/285459",
     author: "Toni Morrison",
   },
   {
@@ -179,6 +175,11 @@ const wantToRead = [
 
 const haveRead = [
   {
+    title: "Jurassic Park",
+    url: "https://bookshop.org/p/books/jurassic-park-michael-crichton/14708249",
+    author: "Michael Crichton",
+  },
+  {
     title: "Typhoid Mary: An Urban Historical",
     url: "https://bookshop.org/p/books/typhoid-mary-an-urban-historical-anthony-bourdain/e307e42714a10cad",
     author: "Anthony Bourdain",
@@ -232,63 +233,50 @@ const haveRead = [
     author: "Truman Capote",
   },
 ];
+
 ---
 
 <SubLayout title="Jake Culp, Senior Product Designer">
-  <section class="py-16 sm:py-24">
-  <div class=""><h1>What I'm Reading</h1></div>
-  <p class="text-lg text-neutral-700">
+  <section class="flex flex-col py-4"><h1>What I'm Reading</h1>
+  <p>
     This list started in 2025, when I decided I needed to read more books, a
     decision I haven't regretted since.
   </p>
   </section>
-  <div class="flex flex-col">
-    <p class="text-balance text-neutral-600 leading-relaxed">Currently:</p>
+  <div class="flex flex-col py-4">
+    <p class="">Currently:</p>
     {
       currentlyReading.map((book) => (
-        <li class=" text-neutral-600 list-inside">
+        <li class="list-none">
           <a
             href={book.url}
             target="_blank"
-            class="underline text-neutral-950 decoration-neutral-700/40 hover:decoration-neutral-700 cursor-alias"
+            class="cursor-alias"
           >
             {book.title}
-          </a>
-          &nbsp;by {book.author}
+          </a>{" "}
+         {book.author}
         </li>
       ))
     }
   </div>
   <div class="flex md:flex-row gap-8 flex-col size-full">
     <div class="flex flex-col size-fit">
-      <p class="text-balance text-neutral-600 leading-relaxed">Have read:</p>
+      <p class="">Have read:</p>
       {
         haveRead.map((book) => (
-          <li class="text-base text-neutral-600 py-1 list-inside">
+          <li class=" py-1 list-none">
             <a
               href={book.url}
               target="_blank"
-              class="underline text-neutral-950 decoration-neutral-700/40 hover:decoration-neutral-700 cursor-alias"
+              class="cursor-alias"
             >
               {book.title}
             </a>{" "}
-            by {book.author}
+           {book.author}
           </li>
         ))
       }
     </div>
   </div>
 </SubLayout>
-
-<style>
-  .fraunces-italic {
-    font-family: "Fraunces Variable", sans-serif;
-    font-weight: 300;
-    font-variation-settings:
-      "WONK" 0,
-      "SOFT" 100;
-    font-optical-sizing: auto;
-    text-decoration-thickness: 0.2ex;
-    text-underline-offset: 0.15ex;
-  }
-</style>

@@ -6,8 +6,8 @@ interface Props {
 const { label } = Astro.props;
 ---
 
-<section class="flex flex-col gap-2.5">
-  <h4 class="text-base font-semibold leading-snug text-neutral-600">{label}</h4>
+<section class="flex flex-col gap-2">
+  <h4>{label}</h4>
   <div class="flex flex-col gap-5">
     <slot />
   </div>

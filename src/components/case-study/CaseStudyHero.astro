@@ -14,30 +14,19 @@ const { title, role, team, heroImage } = Astro.props;
 <header class="flex flex-col gap-8">
   <CaseStudyImage src={heroImage} alt="" />
   <h1
-    class="case-study-title text-pretty text-[48px] font-light leading-[1.1] tracking-[-0.02em] text-neutral-950"
   >
     {title}
   </h1>
   <div class="flex flex-wrap gap-x-12 gap-y-4 leading-relaxed">
     <div class="flex flex-col">
-      <p class="font-semibold text-neutral-950">Role</p>
-      <p class="text-neutral-600">{role}</p>
+      <p class="">Role</p>
+      <p class="">{role}</p>
     </div>
     <div class="flex flex-col">
-      <p class="font-semibold text-neutral-950">Team</p>
-      <ul class="m-0 flex list-none flex-col p-0 text-neutral-600">
+      <p class="">Team</p>
+      <ul class="m-0 flex list-none flex-col p-0 ">
         {team.map((member) => <li>{member}</li>)}
       </ul>
     </div>
   </div>
 </header>
-
-<style>
-  .case-study-title {
-    font-family: "Fraunces Variable", sans-serif;
-    font-variation-settings:
-      "SOFT" 100,
-      "WONK" 1;
-    font-optical-sizing: auto;
-  }
-</style>

@@ -1,0 +1,46 @@
+---
+interface TimelineItem {
+  date: string;
+  title: string;
+  description: string;
+  active: boolean;
+}
+
+interface Props {
+  items: TimelineItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="flex flex-col">
+  {items.map((item, i) => (
+    <div class="flex gap-6">
+      <!-- date label left column, aligned to node -->
+      <div class="w-20 shrink-0 text-right">
+        <span class={`text-sm leading-none pt-0.5 inline-block ${item.active ? "text-mist-500" : "text-mist-300"}`}>
+          {item.date}
+        </span>
+      </div>
+
+      <!-- node + vertical line -->
+      <div class="flex flex-col items-center">
+        <div class={`shrink-0 w-4 h-4 rounded-full border-2 bg-white z-10 mt-0.5 ${item.active ? "border-mist-950" : "border-mist-300"}`} />
+        <!-- connecting line below node; last item gets no line -->
+        {i < items.length - 1 && (
+          <div class={`w-px flex-1 my-1 ${items[i + 1].active ? "bg-mist-950" : "bg-mist-200"}`} />
+        )}
+      </div>
+
+      <!-- title + description right column -->
+      <div class="pb-8">
+        <p class={`font-bold mb-1 leading-none mt-0.5 ${item.active ? "text-mist-950" : "text-mist-400"}`}>
+          {item.title}
+        </p>
+        <p class={`leading-snug ${item.active ? "text-mist-500" : "text-mist-300"}`}>
+          {item.description}
+        </p>
+      </div>
+    </div>
+  ))}
+</div>

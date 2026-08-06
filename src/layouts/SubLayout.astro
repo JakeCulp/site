@@ -26,20 +26,13 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body
-    class="font-sans antialiased bg-white text-neutral-950 max-w-4xl mx-auto cursor-[url('../images/cursor.svg'),pointer]"
+    class="font-sans antialiased bg-white text-mist-950 max-w-4xl mx-auto cursor-[url('../images/cursor.svg'),pointer]"
   >
     <HomeNavigation variant="back" />
-    <main class="flex mx-auto py-8 flex-col gap-4">
+    <main class="flex mx-auto hero flex-col">
       <slot />
     </main>
     <Footer />
     <Agentation />
   </body>
 </html>
-<style>
-  .hero__subheadline a {
-    color: var(--color-green-700);
-    text-decoration-thickness: 0.2ex;
-    text-underline-offset: 0.15ex;
-  }
-</style>
