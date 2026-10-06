@@ -28,11 +28,11 @@ function isActive(href: string) {
 }
 
 const links = [
-  { href: "/", label: "Work" },
-  { href: "/about", label: "About" },
+  //{ href: "/", label: "Work" },
+  // { href: "/about", label: "About" },
   // { href: "/photos", label: "Photos" },
-  { href: "/reading", label: "Reading" },
-  { href: "/style-guide", label: "Style Guide" },
+  //{ href: "/reading", label: "Reading" },
+  //{ href: "/style-guide", label: "Style Guide" },
 ];
 ---
 
@@ -78,13 +78,13 @@ const links = [
           );
         })
       }
-      <li>
+      <li class="list-none">
         <a
           href="/resume.pdf"
           download
           class="text-mist-600 no-underline hover:text-mist-900 hover:bg-mist-100 p-2 rounded-lg font-medium shadow-woah hover:shadow-woah-more cursor-pointer"
         >
-          Resume
+          Resume ↗
         </a>
       </li>
     </ul>

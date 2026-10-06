@@ -5,6 +5,7 @@ team:
   - Product Owner
   - Engineering Lead
   - Lead Developer
+projectSummary: After a company-wide rebrand, it was time to advance our offers experience and give the user more clarity, control, and understanding over what loan they should choose.
 heroImage: /images/case-studies/offers-collage.svg
 cardImage: /images/case-studies/offers-collage.svg
 categories:
@@ -18,12 +19,22 @@ import CaseStudyImage from "../../components/case-study/CaseStudyImage.astro";
 import CaseStudyPillList from "../../components/case-study/CaseStudyPillList.astro";
 import CaseStudyCallout from "../../components/case-study/CaseStudyCallout.astro";
 import CaseStudyCompetitiveGrid from "../../components/case-study/CaseStudyCompetitiveGrid.astro";
+import CaseStudyTldr from "../../components/case-study/CaseStudyTldr.astro";
 
-<CaseStudySection label="Project Overview">
 
-After a company-wide rebrand, it was time to advance our offers experience and give the user more clarity, control, and understanding over what loan they should choose.
+<CaseStudyTldr
+  label="TL;DR"
+  stats={[
+    { value: "12%", label: "Increase in loan offer accept rate" },
+    { value: "19%", label: "Decrease in support inquiries related to loan terms" },
+  ]}
+>
 
-</CaseStudySection>
+* Existing loan offer cards were needing a brand refresh
+* Multiple loan offers meant confusing layout scenarios and a lot of cognitive load put on the user to choose which offer was right for them
+* Only surface the details that users are most looking for
+
+</CaseStudyTldr>
 
 <CaseStudySection label="Problem">
 
@@ -31,7 +42,7 @@ The offers page is one of the most important moments in the customer flow for Be
 
 <CaseStudyImage src="/images/case-studies/offers_page.png" alt="" />
 <CaseStudyImage src="/images/case-studies/offer_details.svg" alt="" />
-<CaseStudyPillList
+{/* <CaseStudyPillList
   variant="problem"
   items={[
     "Loan details were difficult to compare",
@@ -39,11 +50,12 @@ The offers page is one of the most important moments in the customer flow for Be
     "Trust signals were weak at a high-stakes financial moment",
     "It was difficult to scale design to accompany multiple product lines",
   ]}
-/>
+/> */}
 
-These issues resulted in 40% drop off rate between offers page and verification next steps, and increasing customer support questions for our agents.
+These issues resulted in a 40% drop off rate at the offers page, and increased customer call-in volume for our agents.
 
 </CaseStudySection>
+
 
 <CaseStudySection label="Key Insights & Competitive Research">
 

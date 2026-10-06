@@ -11,8 +11,7 @@
 }
 
 @theme {
-  --font-sans:
-    ui-sans-serif, system-ui, sans-serif,
+  --font-sans: 'SF Pro Rounded', ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
 
@@ -61,13 +60,13 @@ h1 {
 
 h2 {
   font-size: var(--font-size-extra-large);
-  font-weight: 500;
+  font-weight: 600;
   color:var(--color-mist-950);
 }
 
 h3 {
   font-size: var(--font-size-large);
-  font-weight: 500;
+  font-weight: 600;
   color:var(--color-mist-950);
 }
 
@@ -95,7 +94,7 @@ li {
   font-size: var(--font-size-medium);
   font-weight: 400;
   color:var(--color-mist-600);
-}
+  }
 
 blockquote {
   font-family: 'Crimson Pro Variable', serif;

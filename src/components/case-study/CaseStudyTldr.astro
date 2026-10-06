@@ -1,0 +1,38 @@
+---
+interface Stat {
+  value: string;
+  label: string;
+}
+
+interface Props {
+  label: string;
+  stats?: Stat[];
+}
+
+const { label, stats = [] } = Astro.props;
+---
+
+<section class="flex flex-col gap-4 ">
+    
+  <h4>{label}</h4>
+  {
+    stats.length > 0 && (
+      <div class="flex flex-wrap gap-x-12 gap-y-4 justify-center">
+        {stats.map((stat) => (
+          <div class="flex flex-col bg-mist-100 p-4 rounded-xl">
+            <h1>
+              {stat.value}
+            </h1>
+            <p class="text-mist-600">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+    )
+  }
+
+    <div
+    class="flex flex-col [&_ul]:list-disc text-pretty"
+  >
+    <slot />
+  </div>
+</section>

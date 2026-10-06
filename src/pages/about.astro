@@ -4,28 +4,44 @@ import Timeline from "../components/Timeline.astro";
 
 const career = [
   { date: "1995", title: "Born", description: "", active: true },
-  { date: "2007", title: "Joined AOL Instant Messenger (AIM)", description: "The first social network I remember joining", active: true },
-  { date: "2009", title: "Told my family I wanted to become UI/UX designer", description: "", active: true },
-  { date: "2009", title: "Senior Product Designer", description: "Expanding scope across platform and design systems.", active: true },
-  { date: "Present", title: "Freelance & Personal Work", description: "Independent projects, writing, and this site.", active: false },
+  {
+    date: "2007",
+    title: "Joined AOL Instant Messenger (AIM)",
+    description: "The first social network I remember joining",
+    active: true,
+  },
+  {
+    date: "2009",
+    title: "Told my family I wanted to become UI/UX designer",
+    description: "",
+    active: true,
+  },
+  {
+    date: "2019",
+    title: "Graduated from Drexel Un",
+    description: "Expanding scope across platform and design systems.",
+    active: true,
+  },
+  {
+    date: "Present",
+    title: "Freelance & Personal Work",
+    description: "Independent projects, writing, and this site.",
+    active: false,
+  },
 ];
 ---
 
 <SubLayout title="Jake Culp, Senior Product Designer">
   <h1>About</h1>
   <p
-    class="hero__subheadline text-xl text-mist-950 text-balance py-12 leading-relaxed"
+    class="hero__subheadline text-xl text-mist-950 text-balance leading-relaxed"
   >
     This is my corner of the internet where I share selected work, process, and
-    a few personal interests like jiu jitsu, <a
-      href="/reading/"
-      class="text-green-700 decoration-[.2ex] underline-offset-[.15ex] underline decoration-green-700/40 hover:decoration-green-700"
-      href="">reading</a
-    >, and <a
-      class="text-green-700 decoration-[.2ex] underline-offset-[.15ex] underline decoration-green-700/40 hover:decoration-green-700"
-      href="">film</a
+    a few personal interests like <a href="/jiu-jitsu/" class="">jiu jitsu</a
+    >, <a href="/reading/" class="" href="">reading</a>, and <a class="" href=""
+      >film</a
     > that continue to shape how I think and design.
   </p>
 
-  <Timeline items={career} />
+  <!-- <Timeline items={career} /> -->
 </SubLayout>

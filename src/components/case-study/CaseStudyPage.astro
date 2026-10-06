@@ -8,11 +8,11 @@ interface Props {
 }
 
 const { study } = Astro.props;
-const { title, role, team, heroImage } = study.data;
+const { title, role, team, projectSummary, heroImage } = study.data;
 const { Content } = await render(study);
 ---
 
-<article class="flex flex-col gap-12 pb-12">
-  <CaseStudyHero title={title} role={role} team={team} heroImage={heroImage} />
+<article class="flex flex-col gap-24 pb-12">
+  <CaseStudyHero title={title} role={role} team={team} projectSummary={projectSummary} heroImage={heroImage} />
   <Content />
 </article>

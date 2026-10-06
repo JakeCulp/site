@@ -11,6 +11,7 @@ const caseStudies = defineCollection({
     title: z.string(),
     role: z.string(),
     team: z.array(z.string()),
+    projectSummary: z.string(),
     heroImage: z.string(),
     cardImage: z.string(),
     categories: z.array(z.string()).optional(),

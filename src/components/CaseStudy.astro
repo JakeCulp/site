@@ -38,17 +38,17 @@ const { company, projects } = Astro.props;
           >
             <div class="w-full">
               <img
-                class="w-full h-full object-cover sm:aspect-5/3 aspect-square hover:scale-101 transition-all duration-150 ease-out will-change-transform rounded-xl"
+                class="w-full h-full object-cover sm:aspect-5/3 aspect-square hover:scale-101 transition-all duration-150 ease-out will-change-transform rounded-xl outline-1 -outline-offset-1 outline-black/5"
                 src={project.image}
                 alt=""
                 loading="lazy"
               />
             </div>
           </a>
-          <div class="flex flex-col py-4">
-            <h3 class="text-balance text-mist-950 leading-normal font-semibold text-center">
+          <div class="flex flex-col py-4 ">
+            <h2 class="text-balance text-mist-950 leading-normal font-semibold text-left">
               {project.title}
-            </h3>
+            </h2>
             {project.categories?.length
               ? (() => {
                   // Use a deterministic approach to assign a unique color to each category per project.
@@ -78,7 +78,7 @@ const { company, projects } = Astro.props;
 
                   return (
                     <ul
-                      class="flex flex-wrap gap-2 mt-1 list-none m-0 p-0 justify-center"
+                      class="flex flex-wrap gap-2 mt-1 list-none m-0 p-0 justify-start"
                       aria-label="Categories"
                     >
                       {project.categories.map((category, idx) => {
