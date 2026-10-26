@@ -1,0 +1,35 @@
+---
+import Footer from "../components/Footer.astro";
+import Navigation from "../components/Navigation.astro";
+import Agentation from "../components/Agentation.astro";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  navigationVariant?: "default" | "back";
+  mainClass: string;
+}
+
+const { title, navigationVariant = "default", mainClass } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alt icon" type="image/png" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body
+    class="mx-auto max-w-4xl cursor-[url('../images/cursor.svg'),pointer] bg-white font-sans text-mist-950 antialiased"
+  >
+    <Navigation variant={navigationVariant} />
+    <main class={mainClass}>
+      <slot />
+    </main>
+    <Footer />
+    <Agentation />
+  </body>
+</html>

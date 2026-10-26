@@ -3,20 +3,10 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
 import CaseStudy, {
-  type Company,
   type CaseStudyProject,
 } from "../components/CaseStudy.astro";
 
-import beLogo from "../images/be-logo.svg";
-
 const studies = await getCollection("caseStudies");
-
-const bestEgg: Company = {
-  logo: beLogo.src,
-  title: "Best Egg",
-  description: "Senior Product Designer",
-  years: "2021 - Present",
-};
 
 const bestEggProjects: CaseStudyProject[] = studies.map((study) => ({
   slug: study.id,
@@ -28,5 +18,5 @@ const bestEggProjects: CaseStudyProject[] = studies.map((study) => ({
 
 <BaseLayout title="Jake Culp, Senior Product Designer">
   <Hero />
-  <CaseStudy company={bestEgg} projects={bestEggProjects} />
+  <CaseStudy projects={bestEggProjects} />
 </BaseLayout>

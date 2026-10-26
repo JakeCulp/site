@@ -1,16 +1,4 @@
 ---
-/**
- * Case Study Section
- * Top: company block (logo, title, description, years).
- * Below: cascading list of project case studies.
- */
-export interface Company {
-  logo: string;
-  title: string;
-  description: string;
-  years: string;
-}
-
 export interface CaseStudyProject {
   slug: string;
   image: string;
@@ -19,15 +7,14 @@ export interface CaseStudyProject {
 }
 
 interface Props {
-  company: Company;
   projects: CaseStudyProject[];
 }
 
-const { company, projects } = Astro.props;
+const { projects } = Astro.props;
 ---
 
 <!-- Cascading list of case study projects -->
-<div class="flex gap-5 w-full">
+<div class="w-full">
   <ul class="list-none m-0 p-0 flex flex-col gap-12 w-full">
     {
       projects.map((project, i) => (

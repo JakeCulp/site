@@ -1,9 +1,6 @@
 ---
-import Footer from "../components/Footer.astro";
-import "../styles/global.css";
+import SiteShell from "./SiteShell.astro";
 import "@fontsource-variable/fraunces/full.css";
-import HomeNavigation from "../components/Navigation.astro";
-import Agentation from "../components/Agentation.astro";
 
 interface Props {
   title: string;
@@ -12,23 +9,10 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="alt icon" type="image/png" href="/favicon.png" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-  </head>
-  <body
-    class="font-sans antialiased bg-white text-mist-950 max-w-4xl mx-auto cursor-[url('../images/cursor.svg'),pointer]"
-  >
-    <HomeNavigation variant="back" />
-    <main class="mx-auto flex flex-col gap-12 py-8 animate-enter">
-      <slot />
-    </main>
-    <Footer />
-    <Agentation />
-  </body>
-</html>
+<SiteShell
+  title={title}
+  navigationVariant="back"
+  mainClass="mx-auto flex flex-col gap-12 py-8 animate-enter"
+>
+  <slot />
+</SiteShell>

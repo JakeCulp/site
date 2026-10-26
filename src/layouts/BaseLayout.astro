@@ -1,8 +1,5 @@
 ---
-import Navigation from "../components/Navigation.astro";
-import Footer from "../components/Footer.astro";
-import Agentation from "../components/Agentation.astro";
-import "../styles/global.css";
+import SiteShell from "./SiteShell.astro";
 import "@fontsource/fraunces";
 import "@fontsource-variable/public-sans";
 import "@fontsource-variable/libre-franklin";
@@ -16,23 +13,6 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="alt icon" type="image/png" href="/favicon.png" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-  </head>
-  <body
-    class="font-sans antialiased bg-white text-mist-950 max-w-4xl mx-auto cursor-[url('../images/cursor.svg'),pointer]"
-  >
-    <Navigation />
-    <main class="mx-auto px-4 2xl:px-0">
-      <slot />
-    </main>
-    <Footer />
-    <Agentation />
-  </body>
-</html>
+<SiteShell title={title} mainClass="mx-auto px-4 2xl:px-0">
+  <slot />
+</SiteShell>
