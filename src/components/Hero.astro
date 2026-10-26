@@ -3,6 +3,9 @@
  * Hero section: large headline + subheadline.
  */
 
+import { Image } from "astro:assets";
+import phillyTeams from "../images/philly-teams.png";
+
 // Determine current path
 const { url } = Astro;
 const currentPath =
@@ -27,23 +30,70 @@ const links = [
 ---
 
 <section class="hero m-auto">
-  <h1 class="hero__headline text-mist-950 text-pretty transition max-w-4xl">
+  <h1 class="hero__headline max-w-4xl text-pretty text-mist-950 transition">
     Hi, I'm Jake. <br />
     <span class="text-mist-500">I'm a </span>product designer <span
-      class="text-mist-500">based in </span
+      class="text-mist-500"
+      >based in
+    </span>
+    <span class="text-pretty"
+      ><span class="philly relative inline-block" tabindex="0"
+        ><span id="philly-team">Philadelphia</span><span
+          class="philly__photo"
+          aria-hidden="true"
+        >
+          <Image src={phillyTeams} alt="" width={480} class="philly__img" />
+        </span></span
+      >, Pennsylvania.</span
     >
-    <span
-      class="text-pretty"><span id="philly-team">Philadelphia</span>, Pennsylvania.</span>
   </h1>
-  <p
-    class=" text-mist-500 pt-8 py-12 text-pretty"
-  >
+  <p class="py-12 pt-8 text-pretty text-mist-500">
     I design digital products with a focus on clarity, systems, and making
     complex experiences feel intuitive. I approach design as both craft and
     infrastructure, shaping individual experiences while building systems that
     help products scale.
   </p>
 </section>
+<style>
+  .philly {
+    cursor: inherit;
+    outline: none;
+  }
+  .philly__photo {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    z-index: 10;
+    width: min(18rem, 80vw);
+    margin: 0.75rem 0 0 calc(min(18rem, 80vw) / -2);
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-0.5rem) rotate(0deg) scale(0.6);
+    transform-origin: top center;
+    transition:
+      transform 500ms cubic-bezier(0.34, 1.56, 0.64, 1),
+      opacity 200ms ease-out;
+  }
+  .philly__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0.75rem;
+    box-shadow:
+      0 0 0 4px white,
+      0 12px 28px -8px rgba(0, 0, 0, 0.4);
+  }
+  .philly:hover .philly__photo,
+  .philly:focus-visible .philly__photo {
+    opacity: 1;
+    transform: translateY(0) rotate(-3deg) scale(1);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .philly__photo {
+      transition-duration: 1ms;
+    }
+  }
+</style>
 <script is:inline>
   (function () {
     var el = document.getElementById("philly-team");
